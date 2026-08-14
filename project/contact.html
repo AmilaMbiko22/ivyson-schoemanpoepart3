@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact Us | Ivyson &amp; Schoeman Home Security</title>
+  <meta name="description" content="Get in touch with Ivyson & Schoeman Home Security. Find our branch locations and send us a message." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/jpeg" href="images/favicon.jpeg" />
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+      <div class="logo"><a href="index.html"><img src="images/logo.jpeg" alt="Ivyson & Schoeman Home Security logo" /></a></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Products &amp; Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="enquiry.html" class="btn-quote">Get a Free Quote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-section">
+      <div class="container">
+        <h2>Contact Us</h2>
+        <p class="section-intro">
+          Visit one of our branches, give us a call, or send a message
+          using the form below.
+        </p>
+
+        <!-- ===== Branch locations (assignment requires more than one) ===== -->
+        <div class="locations-grid">
+          <div class="card">
+            <h3>Cape Town Branch</h3>
+            <p>12 Protea Street, Bellville, Cape Town, 7530</p>
+            <p>+27 21 555 0134</p>
+            <p>Mon &ndash; Fri: 08:00 &ndash; 17:00</p>
+            <!-- Generic embedded map; replace src with the real branch location -->
+            <iframe
+              class="map-embed"
+              src="https://www.google.com/maps?q=Bellville,Cape%20Town&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Map showing Cape Town branch location">
+            </iframe>
+          </div>
+
+          <div class="card">
+            <h3>Johannesburg Branch</h3>
+            <p>45 Voortrekker Avenue, Randburg, Johannesburg, 2194</p>
+            <p>+27 11 555 0198</p>
+            <p>Mon &ndash; Fri: 08:00 &ndash; 17:00</p>
+            <!-- Generic embedded map; replace src with the real branch location -->
+            <iframe
+              class="map-embed"
+              src="https://www.google.com/maps?q=Randburg,Johannesburg&output=embed"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+              title="Map showing Johannesburg branch location">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== Contact form ===== -->
+    <section class="page-section" style="background-color:#eef1f4;">
+      <div class="container">
+        <h2>Send Us a Message</h2>
+        <p class="section-intro">
+          Have a general question that isn't covered by our enquiry
+          form? Reach out here.
+        </p>
+
+        <div class="form-wrapper">
+          <!-- Placeholder action/method - to be connected to a backend or form service -->
+          <form action="#" method="post">
+
+            <div class="form-group">
+              <label for="contactName">Full Name</label>
+              <input type="text" id="contactName" name="contactName" placeholder="Your name" required />
+            </div>
+
+            <div class="form-group">
+              <label for="contactEmail">Email Address</label>
+              <input type="email" id="contactEmail" name="contactEmail" placeholder="you@example.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="branch">Nearest Branch</label>
+              <select id="branch" name="branch">
+                <option value="cape-town">Cape Town</option>
+                <option value="johannesburg">Johannesburg</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage">Message</label>
+              <textarea id="contactMessage" name="contactMessage" rows="5" placeholder="How can we help?"></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="border:none; cursor:pointer;">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Ivyson &amp; Schoeman Home Security</h4>
+        <p>Cheap, reliable and trustworthy home protection for every family.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Products &amp; Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>info@ivysonschoeman.co.za</li>
+          <li>+27 21 555 0134</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Ivyson &amp; Schoeman Home Security. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

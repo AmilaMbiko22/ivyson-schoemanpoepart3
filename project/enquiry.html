@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Enquiry | Ivyson &amp; Schoeman Home Security</title>
+  <meta name="description" content="Submit an enquiry or request a free quote from Ivyson & Schoeman Home Security." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" type="image/jpeg" href="images/favicon.jpeg" />
+</head>
+<body>
+
+  <header>
+    <div class="navbar">
+      <div class="logo"><a href="index.html"><img src="images/logo.jpeg" alt="Ivyson & Schoeman Home Security logo" /></a></div>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Products &amp; Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="enquiry.html" class="btn-quote">Get a Free Quote</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-section">
+      <div class="container">
+        <h2>Request a Quote or Ask a Question</h2>
+        <p class="section-intro">
+          Fill in the form below and our team will get back to you
+          with a free, no-obligation quote for your home security
+          setup.
+        </p>
+
+        <!--
+          Enquiry form.
+          Note: this form does not currently submit to a live backend.
+          The action/method below are placeholders for when the form
+          is connected to a server-side script or form handling service.
+        -->
+        <div class="form-wrapper">
+          <form action="#" method="post">
+
+            <div class="form-group">
+              <label for="fullName">Full Name</label>
+              <input type="text" id="fullName" name="fullName" placeholder="e.g. Thandeka Nkosi" required />
+            </div>
+
+            <div class="form-group">
+              <label for="email">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            </div>
+
+            <div class="form-group">
+              <label for="phone">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="e.g. 082 123 4567" required />
+            </div>
+
+            <div class="form-group">
+              <label for="houseSize">Approximate House Size</label>
+              <select id="houseSize" name="houseSize">
+                <option value="small">Small (1&ndash;2 bedrooms)</option>
+                <option value="medium">Medium (3&ndash;4 bedrooms)</option>
+                <option value="large">Large (5+ bedrooms)</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label>Product / Service of Interest</label>
+              <div class="radio-group">
+                <label><input type="radio" name="interest" value="cameras" checked /> Cameras</label>
+                <label><input type="radio" name="interest" value="sensors" /> Sensors</label>
+                <label><input type="radio" name="interest" value="smart-locks" /> Smart Locks</label>
+                <label><input type="radio" name="interest" value="full-setup" /> Full Setup Quote</label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Tell Us About Your Security Needs</label>
+              <textarea id="message" name="message" rows="5" placeholder="Describe your property and what you're looking for..."></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary" style="border:none; cursor:pointer;">Submit Enquiry</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <h4>Ivyson &amp; Schoeman Home Security</h4>
+        <p>Cheap, reliable and trustworthy home protection for every family.</p>
+      </div>
+      <div>
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Products &amp; Services</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="enquiry.html">Enquiry</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <ul>
+          <li>info@ivysonschoeman.co.za</li>
+          <li>+27 21 555 0134</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Ivyson &amp; Schoeman Home Security. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,424 @@
+/* =========================================================
+   Ivyson & Schoeman Home Security
+   Stylesheet
+   Colour palette: Navy Blue, Slate Gray, Alert Yellow
+   Font: clean sans-serif for maximum legibility
+   ========================================================= */
+
+/* ---- CSS Variables (colour palette + spacing) ---- */
+:root {
+  --navy: #0b1f3a;
+  --navy-light: #14335c;
+  --slate: #6b7684;
+  --slate-light: #eef1f4;
+  --alert-yellow: #ffc107;
+  --white: #ffffff;
+  --text-dark: #1f2933;
+  --radius: 8px;
+  --shadow: 0 2px 8px rgba(11, 31, 58, 0.12);
+}
+
+/* ---- Reset / base ---- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+  color: var(--text-dark);
+  background-color: var(--slate-light);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* ---- Header / Navigation ---- */
+header {
+  background-color: var(--navy);
+  color: var(--white);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: var(--shadow);
+}
+
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  display: flex;
+  align-items: center;
+}
+
+.logo span {
+  color: var(--alert-yellow);
+}
+
+.logo img {
+  height: 48px;
+  width: auto;
+  border-radius: 4px;
+  background-color: var(--white);
+  padding: 2px 6px;
+}
+
+/* ---- Product images (services page cards) ---- */
+.card img.product-image {
+  width: 100%;
+  height: 160px;
+  object-fit: contain;
+  background-color: var(--white);
+  border-radius: var(--radius);
+  margin-bottom: 14px;
+  padding: 10px;
+}
+
+nav ul {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+nav ul li a {
+  font-weight: 600;
+  padding: 8px 4px;
+  border-bottom: 3px solid transparent;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+  border-bottom-color: var(--alert-yellow);
+}
+
+.btn-quote {
+  background-color: var(--alert-yellow);
+  color: var(--navy);
+  font-weight: 700;
+  padding: 10px 18px;
+  border-radius: var(--radius);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+
+.btn-quote:hover {
+  background-color: #ffd54a;
+  transform: translateY(-2px);
+}
+
+/* ---- Hero section (index page) ---- */
+.hero {
+  background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+  color: var(--white);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.hero h1 {
+  font-size: 2.4rem;
+  margin-bottom: 16px;
+}
+
+.hero p {
+  max-width: 640px;
+  margin: 0 auto 28px auto;
+  color: #d7dee8;
+  font-size: 1.05rem;
+}
+
+.hero-image {
+  margin: 32px auto 0 auto;
+  max-width: 700px;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+}
+
+.btn-primary {
+  display: inline-block;
+  background-color: var(--alert-yellow);
+  color: var(--navy);
+  font-weight: 700;
+  padding: 14px 30px;
+  border-radius: var(--radius);
+  transition: transform 0.15s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+}
+
+/* ---- Generic page sections ---- */
+.page-section {
+  padding: 60px 20px;
+}
+
+.page-section h2 {
+  color: var(--navy);
+  font-size: 1.8rem;
+  margin-bottom: 12px;
+  text-align: center;
+}
+
+.section-intro {
+  text-align: center;
+  color: var(--slate);
+  max-width: 640px;
+  margin: 0 auto 40px auto;
+}
+
+/* ---- Card layout ---- */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.card {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 24px;
+  border-top: 4px solid var(--alert-yellow);
+  transition: transform 0.15s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h3 {
+  color: var(--navy);
+  margin-bottom: 10px;
+}
+
+.card p {
+  color: var(--text-dark);
+  font-size: 0.95rem;
+}
+
+.card ul {
+  margin-top: 10px;
+}
+
+.card ul li {
+  padding-left: 18px;
+  position: relative;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+.card ul li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--alert-yellow);
+  font-weight: 700;
+}
+
+/* ---- Two-column layout (about page) ---- */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+@media (max-width: 700px) {
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ---- Team members ---- */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+  margin-top: 30px;
+}
+
+.team-card {
+  background-color: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  text-align: center;
+  padding: 24px;
+}
+
+.team-card .avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background-color: var(--slate-light);
+  border: 3px solid var(--alert-yellow);
+  margin: 0 auto 14px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  color: var(--navy);
+  font-size: 1.3rem;
+}
+
+/* ---- Pricing table ---- */
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 30px;
+  background-color: var(--white);
+  box-shadow: var(--shadow);
+  border-radius: var(--radius);
+  overflow: hidden;
+}
+
+.pricing-table th,
+.pricing-table td {
+  padding: 14px 18px;
+  text-align: left;
+  border-bottom: 1px solid var(--slate-light);
+}
+
+.pricing-table th {
+  background-color: var(--navy);
+  color: var(--white);
+}
+
+.pricing-table tr:last-child td {
+  font-weight: 700;
+  color: var(--navy);
+}
+
+/* ---- Forms (enquiry / contact) ---- */
+.form-wrapper {
+  background-color: var(--white);
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--navy);
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid #c7cdd4;
+  border-radius: var(--radius);
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  outline: 2px solid var(--alert-yellow);
+  border-color: var(--navy);
+}
+
+.radio-group {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.radio-group label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-weight: 400;
+  color: var(--text-dark);
+}
+
+/* ---- Contact info / locations ---- */
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 24px;
+  margin-bottom: 40px;
+}
+
+.map-embed {
+  width: 100%;
+  height: 260px;
+  border: 0;
+  border-radius: var(--radius);
+  margin-top: 14px;
+}
+
+/* ---- Footer ---- */
+footer {
+  background-color: var(--navy);
+  color: #cdd5e0;
+  padding: 36px 20px 20px 20px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 24px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.footer-grid h4 {
+  color: var(--white);
+  margin-bottom: 12px;
+}
+
+.footer-grid ul li {
+  margin-bottom: 8px;
+  font-size: 0.9rem;
+}
+
+.footer-bottom {
+  text-align: center;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 0.85rem;
+  color: #93a0b2;
+}
