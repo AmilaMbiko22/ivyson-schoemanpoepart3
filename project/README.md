@@ -3,7 +3,7 @@
 **Student:** Amila Mbiko (ST10531465, GR01)
 **Module:** Web Development (Introduction) — WEDE5020
 **Live site:** https://ivyson-schoeman-security.netlify.app
-**Repository:** https://github.com/AmilaMbiko22/POEWEBDEVPART1
+**Repository:** https://github.com/AmilaMbiko22/ivyson-schoemanpoepart3
 
 ## Project Title
 Ivyson & Schoeman Home Security — Business Website
