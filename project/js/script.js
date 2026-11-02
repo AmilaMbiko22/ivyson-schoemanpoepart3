@@ -120,9 +120,12 @@
   /* ---------- Active nav link (from Part 1) ---------- */
 
   function markActiveNav() {
-    var currentPage = window.location.pathname.split("/").pop() || "index.html";
+    // Hosts such as Netlify serve "/services" instead of "/services.html",
+    // so compare the page names with ".html" removed.
+    var clean = function (p) { return (p.split("/").pop() || "index").replace(/\.html$/, "") || "index"; };
+    var currentPage = clean(window.location.pathname);
     document.querySelectorAll("nav ul li a").forEach(function (link) {
-      if (link.getAttribute("href") === currentPage) link.classList.add("active");
+      if (clean(link.getAttribute("href")) === currentPage) link.classList.add("active");
     });
     // Close the CSS-only mobile menu after choosing a link on the same page
     var toggle = document.getElementById("nav-toggle");

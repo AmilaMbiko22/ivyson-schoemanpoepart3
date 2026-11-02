@@ -168,7 +168,7 @@ HTML5, CSS3 (custom properties, Flexbox, Grid, media queries), JavaScript (ES5-s
 ## Deployment (Netlify)
 1. Push the repository to GitHub.
 2. In Netlify choose **Add new site → Import an existing project**, select the repository and set the **publish directory to `project`** (or drag the `project` folder onto Netlify Drop).
-3. After the site is live, replace `https://ivyson-schoeman-security.netlify.app` with the final address in `robots.txt`, `sitemap.xml`, the `canonical`/`og:url` tags in each page and the JSON-LD block in `index.html`.
+3. The site is deployed at https://ivyson-schoeman-security.netlify.app. If the address ever changes, update it in `robots.txt`, `sitemap.xml`, the `canonical`/`og:url` tags in each page and the JSON-LD block in `index.html`.
 
 ## Notes
 - The forms have no server: the estimate is calculated in the browser from `data/products.json`, and emails are sent through the visitor's own email app. Change `CONTACT_EMAIL` in `js/forms.js` to change the recipient.
@@ -217,6 +217,7 @@ HTML5, CSS3 (custom properties, Flexbox, Grid, media queries), JavaScript (ES5-s
 - **Changed** `css/style.css`: new component styles (tabs, chips, modal, lightbox, accordion, validation states, result panels, map), responsive rules for the new components, and `.page-section h1` shares the former `h2` styling.
 
 **Repository**
+- **Fixed (found after deployment):** Netlify serves pages without `.html` (e.g. `/services`), which stopped the active-menu highlight working; `js/script.js` now ignores the `.html` ending. Canonical, `og:url` and `sitemap.xml` addresses were changed to the same clean URLs.
 - Regular, descriptive commits were made for each of the groups above.
 
 ## References
