@@ -1,0 +1,10 @@
+[
+  {"id":"t1","topic":"Cameras","title":"Cover every entry point","body":"Burglars favour front doors, back doors and ground-floor windows. Place cameras so each of these is in view, and mount them high enough to be out of easy reach."},
+  {"id":"t2","topic":"Cameras","title":"Check your night vision","body":"Test your cameras after dark at least once. Dirty lenses, spider webs and bright security lights can wash out the picture just when you need it."},
+  {"id":"t3","topic":"Sensors","title":"Sensors beat guesswork","body":"A door or window contact sensor alerts your phone the moment something opens, even when nobody is looking at the camera feed."},
+  {"id":"t4","topic":"Sensors","title":"Mind the pets","body":"If you have pets, choose pet-immune motion sensors or place them so animals are not triggering false alarms every night."},
+  {"id":"t5","topic":"Smart Locks","title":"Retire the hidden spare key","body":"The flowerpot is the first place a thief looks. A keypad smart lock lets you issue and cancel PIN codes for family, helpers and visitors."},
+  {"id":"t6","topic":"Smart Locks","title":"Review your access log","body":"Smart locks record who came and went. A quick weekly look at the log shows unexpected entries early."},
+  {"id":"t7","topic":"Habits","title":"Make the house look lived-in","body":"Use timers on lights, ask a neighbour to collect post and avoid announcing holidays on social media."},
+  {"id":"t8","topic":"Habits","title":"Know your neighbours","body":"A neighbourhood WhatsApp group with active neighbours is one of the cheapest and most effective security upgrades."}
+]

@@ -3,17 +3,49 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ivyson &amp; Schoeman Home Security | Home</title>
-  <meta name="description" content="Ivyson & Schoeman Home Security provides affordable, reliable home security equipment and installation for families." />
+  <title>Affordable Home Security Systems | Ivyson &amp; Schoeman</title>
+  <meta name="description" content="Cheap, reliable home security in Cape Town and Johannesburg: CCTV cameras, door and window sensors and smart locks, with free quotes and professional installation." />
+  <meta name="keywords" content="home security, home security South Africa, security cameras, CCTV installation, smart locks, door sensors, burglar alarm, free security quote, Cape Town, Johannesburg" />
+  <meta name="author" content="Ivyson &amp; Schoeman Home Security" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0b1f3a" />
+  <link rel="canonical" href="https://ivyson-schoeman-security.netlify.app/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ivyson &amp; Schoeman Home Security" />
+  <meta property="og:title" content="Affordable Home Security Systems | Ivyson &amp; Schoeman" />
+  <meta property="og:description" content="Cheap, reliable home security in Cape Town and Johannesburg: CCTV cameras, door and window sensors and smart locks, with free quotes and professional installation." />
+  <meta property="og:url" content="https://ivyson-schoeman-security.netlify.app/" />
+  <meta property="og:image" content="https://ivyson-schoeman-security.netlify.app/images/home-security-hero-738w.jpeg" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https://*.tile.openstreetmap.org https://cdnjs.cloudflare.com; connect-src 'self'; font-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/jpeg" href="images/favicon.jpeg" />
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "HomeAndConstructionBusiness",
+    "name": "Ivyson & Schoeman Home Security",
+    "description": "Home security equipment and installation: cameras, sensors and smart locks.",
+    "url": "https://ivyson-schoeman-security.netlify.app/",
+    "email": "info@ivysonschoeman.co.za",
+    "telephone": "+27215550134",
+    "areaServed": ["Cape Town", "Johannesburg"],
+    "founder": [{"@type": "Person", "name": "Samuel Ivyson"}, {"@type": "Person", "name": "Du-Plessis Schoeman"}],
+    "address": [
+      {"@type": "PostalAddress", "streetAddress": "12 Protea Street, Bellville", "addressLocality": "Cape Town", "postalCode": "7530", "addressCountry": "ZA"},
+      {"@type": "PostalAddress", "streetAddress": "45 Voortrekker Avenue, Randburg", "addressLocality": "Johannesburg", "postalCode": "2194", "addressCountry": "ZA"}
+    ]
+  }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <!-- ===== Header / Navigation (same structure on every page) ===== -->
   <header>
     <div class="navbar">
-      <div class="logo"><a href="index.html"><img src="images/logo.jpeg" alt="Ivyson & Schoeman Home Security logo" /></a></div>
+      <div class="logo"><a href="index.html"><img src="images/ivyson-schoeman-logo.jpeg" alt="Ivyson & Schoeman Home Security logo" /></a></div>
 
       <input type="checkbox" id="nav-toggle" class="nav-toggle" />
       <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu">
@@ -32,7 +64,7 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <!-- ===== Hero section ===== -->
     <section class="hero">
       <div class="container">
@@ -47,8 +79,8 @@
         <!-- Hero image placeholder: replace src with a real photo in /images -->
         <div class="hero-image">
           <img
-            src="images/hero-placeholder-738w.jpeg"
-            srcset="images/hero-placeholder-400w.jpeg 400w, images/hero-placeholder-738w.jpeg 738w"
+            src="images/home-security-hero-738w.jpeg"
+            srcset="images/home-security-hero-400w.jpeg 400w, images/home-security-hero-738w.jpeg 738w"
             sizes="(max-width: 700px) 100vw, 700px"
             alt="Modern home fitted with security cameras and smart locks"
             width="738" height="369"
@@ -99,11 +131,27 @@
       </div>
     </section>
 
-    <!-- ===== Call to action banner ===== -->
-    <section class="page-section" style="background-color:#0b1f3a; color:#fff; text-align:center;">
+    <!-- ===== Home safety tips (loaded dynamically from data/tips.json) ===== -->
+    <section class="page-section section-alt" id="safety-tips">
       <div class="container">
-        <h2 style="color:#fff;">Ready to Secure Your Home?</h2>
-        <p style="color:#d7dee8; max-width:600px; margin:0 auto 24px auto;">
+        <h2>Home Safety Tips</h2>
+        <p class="section-intro">
+          Practical advice to make your home a harder target. Choose a
+          topic to filter the tips.
+        </p>
+        <div class="chip-row" id="tip-filters" role="group" aria-label="Filter safety tips by topic"></div>
+        <div class="card-grid" id="tips-grid" aria-live="polite">
+          <p class="status-msg">Loading safety tips&hellip;</p>
+        </div>
+        <noscript><p class="status-msg">Enable JavaScript to see our home safety tips.</p></noscript>
+      </div>
+    </section>
+
+    <!-- ===== Call to action banner ===== -->
+    <section class="page-section section-navy">
+      <div class="container">
+        <h2>Ready to Secure Your Home?</h2>
+        <p class="cta-text">
           Tell us about your property and we'll put together a free,
           no-obligation quotation.
         </p>
@@ -142,6 +190,7 @@
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/tips.js" defer></script>
 </body>
 </html>
