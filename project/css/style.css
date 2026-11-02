@@ -25,6 +25,13 @@
   box-sizing: border-box;
 }
 
+html {
+  /* Base font size drives every rem value on the page, so scaling
+     this one rule is enough to adjust the whole type scale
+     per breakpoint (see the media queries below). */
+  font-size: 100%; /* 1rem = 16px */
+}
+
 body {
   font-family: "Segoe UI", Arial, Helvetica, sans-serif;
   color: var(--text-dark);
@@ -105,7 +112,7 @@ header {
 
 nav ul {
   display: flex;
-  gap: 28px;
+  gap: 1.75rem;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -118,8 +125,37 @@ nav ul li a {
 }
 
 nav ul li a:hover,
+nav ul li a:focus-visible,
 nav ul li a.active {
   border-bottom-color: var(--alert-yellow);
+}
+
+nav ul li a:focus-visible {
+  outline: 2px solid var(--alert-yellow);
+  outline-offset: 2px;
+}
+
+/* ---- Mobile nav toggle (CSS-only checkbox hack, no JS required) ---- */
+.nav-toggle {
+  display: none;
+}
+
+.nav-toggle-label {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 26px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.nav-toggle-label span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--white);
+  border-radius: 2px;
+  transition: transform 0.2s ease, opacity 0.2s ease;
 }
 
 .btn-quote {
@@ -145,13 +181,13 @@ nav ul li a.active {
 }
 
 .hero h1 {
-  font-size: 2.4rem;
-  margin-bottom: 16px;
+  font-size: clamp(1.75rem, 4vw + 1rem, 2.4rem);
+  margin-bottom: 1rem;
 }
 
 .hero p {
-  max-width: 640px;
-  margin: 0 auto 28px auto;
+  max-width: 40rem;
+  margin: 0 auto 1.75rem auto;
   color: #d7dee8;
   font-size: 1.05rem;
 }
@@ -253,12 +289,6 @@ nav ul li a.active {
   grid-template-columns: 1fr 1fr;
   gap: 40px;
   align-items: center;
-}
-
-@media (max-width: 700px) {
-  .two-col {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* ---- Team members ---- */
@@ -421,4 +451,155 @@ footer {
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 0.85rem;
   color: #93a0b2;
+}
+
+/* =========================================================
+   Responsive Design
+   Breakpoints:
+     Desktop : 993px and up   (default styles above)
+     Tablet  : 701px – 992px
+     Mobile  : 700px and below
+   ========================================================= */
+
+/* ---- Tablet (≤ 992px): tighten spacing, keep multi-column ---- */
+@media (max-width: 992px) {
+  .container {
+    padding: 0 1.25rem;
+  }
+
+  .hero {
+    padding: 4rem 1.25rem;
+  }
+
+  .page-section {
+    padding: 3rem 1.25rem;
+  }
+
+  .card-grid,
+  .team-grid,
+  .locations-grid {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  }
+}
+
+/* ---- Mobile (≤ 700px): single-column layout, hamburger nav ---- */
+@media (max-width: 700px) {
+  html {
+    font-size: 93.75%; /* ~15px base: scales every rem value down together */
+  }
+
+  /* Collapsible navigation */
+  .navbar {
+    position: relative;
+  }
+
+  .nav-toggle-label {
+    display: flex;
+  }
+
+  nav {
+    flex-basis: 100%;
+  }
+
+  nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    padding-top: 12px;
+  }
+
+  nav ul li a {
+    display: block;
+    padding: 12px 4px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+  }
+
+  nav ul li a.active,
+  nav ul li a:hover {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    color: var(--alert-yellow);
+  }
+
+  .btn-quote {
+    text-align: center;
+    margin-top: 8px;
+  }
+
+  .nav-toggle:checked ~ nav ul {
+    display: flex;
+  }
+
+  .nav-toggle:checked ~ .nav-toggle-label span:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .nav-toggle:checked ~ .nav-toggle-label span:nth-child(2) {
+    opacity: 0;
+  }
+
+  .nav-toggle:checked ~ .nav-toggle-label span:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  /* Hero */
+  .hero {
+    padding: 3rem 1rem;
+  }
+
+  .hero-image {
+    margin-top: 1.5rem;
+  }
+
+  /* Section headings */
+  .page-section {
+    padding: 2.5rem 1rem;
+  }
+
+  .page-section h2 {
+    font-size: 1.5rem;
+  }
+
+  /* Single-column layouts on small screens */
+  .card-grid,
+  .team-grid,
+  .locations-grid,
+  .footer-grid,
+  .two-col {
+    grid-template-columns: 1fr;
+  }
+
+  /* Pricing table: allow horizontal scroll instead of squashing text */
+  .pricing-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+
+  .form-wrapper {
+    padding: 1.5rem;
+  }
+
+  .radio-group {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* ---- Small mobile (≤ 420px): extra breathing room on tiny screens ---- */
+@media (max-width: 420px) {
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  .btn-primary,
+  .btn-quote {
+    width: 100%;
+    text-align: center;
+  }
+
+  .logo img {
+    height: 38px;
+  }
 }

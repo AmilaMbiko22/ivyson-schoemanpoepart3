@@ -14,6 +14,12 @@
   <header>
     <div class="navbar">
       <div class="logo"><a href="index.html"><img src="images/logo.jpeg" alt="Ivyson & Schoeman Home Security logo" /></a></div>
+
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" />
+      <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu">
+        <span></span><span></span><span></span>
+      </label>
+
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
@@ -40,7 +46,13 @@
 
         <!-- Hero image placeholder: replace src with a real photo in /images -->
         <div class="hero-image">
-          <img src="images/hero-placeholder.jpeg" alt="Modern home fitted with security cameras and smart locks" />
+          <img
+            src="images/hero-placeholder-738w.jpeg"
+            srcset="images/hero-placeholder-400w.jpeg 400w, images/hero-placeholder-738w.jpeg 738w"
+            sizes="(max-width: 700px) 100vw, 700px"
+            alt="Modern home fitted with security cameras and smart locks"
+            width="738" height="369"
+          />
         </div>
       </div>
     </section>
