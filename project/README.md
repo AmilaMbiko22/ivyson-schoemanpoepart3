@@ -46,6 +46,21 @@ project/
 └── README.md
 ```
 
+## Site Map
+```
+Home (index.html)
+├── Products & Services (services.html)
+│   ├── Product catalog: cameras, sensors, smart locks (search, sort, details)
+│   ├── Services and indicative pricing
+│   ├── Photo gallery (lightbox)
+│   └── FAQ
+├── About Us (about.html): history, mission, vision, goals, team
+├── Contact (contact.html): two branches, interactive map, contact form
+└── Get a Free Quote / Enquiry (enquiry.html): cost-estimate form
+```
+Every page links to every other page through the top navigation and the footer.
+The machine-readable version for search engines is `sitemap.xml`.
+
 ## Design
 - **Colour palette:** Navy Blue (`#0b1f3a`), Slate Gray (`#6b7684`), Alert Yellow (`#ffc107`)
 - **Typography:** clean sans-serif (Segoe UI / Arial / Helvetica), `rem` based
@@ -164,6 +179,11 @@ HTML5, CSS3 (custom properties, Flexbox, Grid, media queries), JavaScript (ES5-s
 ## Changelog
 
 ### Part 3 — Enhancing Functionality and SEO
+
+**Changes made in response to Part 1 feedback (72/100)**
+- **Added (feedback: sitemap only 2/5):** a page-hierarchy site map in this README and a search-engine `sitemap.xml` listing all five pages.
+- **Improved (feedback: GitHub commits 3/5):** the Part 3 work was committed in separate, descriptive commits (SEO, styles, home page, services page, contact page, forms, docs, README) instead of a single commit.
+- **Improved (feedback: references 3/5):** the reference list was expanded from five general sources to sixteen Harvard-style references covering SEO, JavaScript, forms, mapping, security and accessibility, each with an access date.
 
 **Changes made in response to Part 2 feedback (90/100)**
 - **Added (feedback: no screenshot evidence of responsive testing):** captured full-page screenshots of the Home, Products & Services, About Us and Enquiry pages at desktop (1280px), tablet (800px) and mobile (375px) and saved them in `docs/screenshots/`. They are linked from the *Responsive Design & Testing Evidence* section above, together with a list of the automated checks run. The earlier sentence saying screenshots were "to be added" was removed.
