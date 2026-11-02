@@ -3,16 +3,33 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Contact Us | Ivyson &amp; Schoeman Home Security</title>
-  <meta name="description" content="Get in touch with Ivyson & Schoeman Home Security. Find our branch locations and send us a message." />
+  <title>Contact Us | Cape Town &amp; Johannesburg | Ivyson &amp; Schoeman</title>
+  <meta name="description" content="Contact Ivyson &amp; Schoeman Home Security. Find our Cape Town (Bellville) and Johannesburg (Randburg) branches on an interactive map and send us a message." />
+  <meta name="keywords" content="contact home security, security company Cape Town, security company Johannesburg, Bellville, Randburg, home security branch, security enquiry" />
+  <meta name="author" content="Ivyson &amp; Schoeman Home Security" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0b1f3a" />
+  <link rel="canonical" href="https://ivyson-schoeman-security.netlify.app/contact.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ivyson &amp; Schoeman Home Security" />
+  <meta property="og:title" content="Contact Us | Cape Town &amp; Johannesburg | Ivyson &amp; Schoeman" />
+  <meta property="og:description" content="Contact Ivyson &amp; Schoeman Home Security. Find our Cape Town (Bellville) and Johannesburg (Randburg) branches on an interactive map and send us a message." />
+  <meta property="og:url" content="https://ivyson-schoeman-security.netlify.app/contact.html" />
+  <meta property="og:image" content="https://ivyson-schoeman-security.netlify.app/images/home-security-hero-738w.jpeg" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https://*.tile.openstreetmap.org https://cdnjs.cloudflare.com; connect-src 'self'; font-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <link rel="preconnect" href="https://tile.openstreetmap.org" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.css" crossorigin="" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/jpeg" href="images/favicon.jpeg" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <header>
     <div class="navbar">
-      <div class="logo"><a href="index.html"><img src="images/logo.jpeg" alt="Ivyson & Schoeman Home Security logo" /></a></div>
+      <div class="logo"><a href="index.html"><img src="images/ivyson-schoeman-logo.jpeg" alt="Ivyson & Schoeman Home Security logo" /></a></div>
 
       <input type="checkbox" id="nav-toggle" class="nav-toggle" />
       <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu">
@@ -31,52 +48,47 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="page-section">
       <div class="container">
-        <h2>Contact Us</h2>
+        <h1>Contact Us</h1>
         <p class="section-intro">
           Visit one of our branches, give us a call, or send a message
           using the form below.
         </p>
 
-        <!-- ===== Branch locations (assignment requires more than one) ===== -->
+        <!-- ===== Branch locations (interactive Leaflet map, js/map.js) ===== -->
         <div class="locations-grid">
-          <div class="card">
-            <h3>Cape Town Branch</h3>
+          <div class="card branch-card">
+            <h3 class="subheading">Cape Town Branch</h3>
             <p>12 Protea Street, Bellville, Cape Town, 7530</p>
-            <p>+27 21 555 0134</p>
+            <p><a href="tel:+27215550134">+27 21 555 0134</a></p>
             <p>Mon &ndash; Fri: 08:00 &ndash; 17:00</p>
-            <!-- Generic embedded map; replace src with the real branch location -->
-            <iframe
-              class="map-embed"
-              src="https://www.google.com/maps?q=Bellville,Cape%20Town&output=embed"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Map showing Cape Town branch location">
-            </iframe>
+            <a class="btn-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=-33.9008,18.6296" target="_blank" rel="noopener noreferrer">Get directions (opens in a new tab)</a>
           </div>
 
-          <div class="card">
-            <h3>Johannesburg Branch</h3>
+          <div class="card branch-card">
+            <h3 class="subheading">Johannesburg Branch</h3>
             <p>45 Voortrekker Avenue, Randburg, Johannesburg, 2194</p>
-            <p>+27 11 555 0198</p>
+            <p><a href="tel:+27115550198">+27 11 555 0198</a></p>
             <p>Mon &ndash; Fri: 08:00 &ndash; 17:00</p>
-            <!-- Generic embedded map; replace src with the real branch location -->
-            <iframe
-              class="map-embed"
-              src="https://www.google.com/maps?q=Randburg,Johannesburg&output=embed"
-              loading="lazy"
-              referrerpolicy="no-referrer-when-downgrade"
-              title="Map showing Johannesburg branch location">
-            </iframe>
+            <a class="btn-link" href="https://www.google.com/maps/dir/?api=1&amp;destination=-26.0940,28.0060" target="_blank" rel="noopener noreferrer">Get directions (opens in a new tab)</a>
           </div>
+        </div>
+
+        <div class="map-toolbar" role="group" aria-label="Choose a branch to show on the map">
+          <button type="button" class="chip" data-branch="all" aria-pressed="true">Show both</button>
+          <button type="button" class="chip" data-branch="cape-town" aria-pressed="false">Cape Town</button>
+          <button type="button" class="chip" data-branch="johannesburg" aria-pressed="false">Johannesburg</button>
+        </div>
+        <div id="branch-map" role="region" aria-label="Interactive map of our Cape Town and Johannesburg branches">
+          <p class="map-fallback">Loading map&hellip; If the map does not appear, use the &ldquo;Get directions&rdquo; links above.</p>
         </div>
       </div>
     </section>
 
     <!-- ===== Contact form ===== -->
-    <section class="page-section" style="background-color:#eef1f4;">
+    <section class="page-section section-alt">
       <div class="container">
         <h2>Send Us a Message</h2>
         <p class="section-intro">
@@ -85,34 +97,65 @@
         </p>
 
         <div class="form-wrapper">
-          <!-- Placeholder action/method - to be connected to a backend or form service -->
-          <form action="#" method="post">
+          <!-- js/forms.js validates, then compiles the message into an email
+               addressed to the recipient set in the code (CONTACT_EMAIL). -->
+          <form id="contact-form" action="mailto:info@ivysonschoeman.co.za" method="post" enctype="text/plain" autocomplete="on">
 
-            <div class="form-group">
-              <label for="contactName">Full Name</label>
-              <input type="text" id="contactName" name="contactName" placeholder="Your name" required />
+            <div class="form-group" id="g-contactName">
+              <label for="contactName" class="required">Full Name</label>
+              <input type="text" id="contactName" name="contactName" placeholder="Your name" required minlength="2" maxlength="60" autocomplete="name" />
             </div>
 
-            <div class="form-group">
-              <label for="contactEmail">Email Address</label>
-              <input type="email" id="contactEmail" name="contactEmail" placeholder="you@example.com" required />
+            <div class="form-group" id="g-contactEmail">
+              <label for="contactEmail" class="required">Email Address</label>
+              <input type="email" id="contactEmail" name="contactEmail" placeholder="you@example.com" required maxlength="100" autocomplete="email" />
             </div>
 
-            <div class="form-group">
-              <label for="branch">Nearest Branch</label>
-              <select id="branch" name="branch">
-                <option value="cape-town">Cape Town</option>
-                <option value="johannesburg">Johannesburg</option>
+            <div class="form-group" id="g-contactPhone">
+              <label for="contactPhone">Phone Number <span class="hint">(optional)</span></label>
+              <input type="tel" id="contactPhone" name="contactPhone" placeholder="e.g. 082 123 4567" maxlength="20" autocomplete="tel" inputmode="tel" />
+            </div>
+
+            <div class="form-group" id="g-branch">
+              <label for="branch" class="required">Nearest Branch</label>
+              <select id="branch" name="branch" required>
+                <option value="">Select a branch&hellip;</option>
+                <option value="Cape Town">Cape Town</option>
+                <option value="Johannesburg">Johannesburg</option>
               </select>
             </div>
 
-            <div class="form-group">
-              <label for="contactMessage">Message</label>
-              <textarea id="contactMessage" name="contactMessage" rows="5" placeholder="How can we help?"></textarea>
+            <div class="form-group" id="g-messageType">
+              <label for="messageType" class="required">Type of Message</label>
+              <select id="messageType" name="messageType" required>
+                <option value="">Select a message type&hellip;</option>
+                <option value="General question">General question</option>
+                <option value="Support for existing installation">Support for an existing installation</option>
+                <option value="Feedback or compliment">Feedback or compliment</option>
+                <option value="Complaint">Complaint</option>
+                <option value="Partnership or sponsorship">Partnership or sponsorship</option>
+              </select>
             </div>
 
-            <button type="submit" class="btn-primary" style="border:none; cursor:pointer;">Send Message</button>
+            <div class="form-group" id="g-subject">
+              <label for="subject" class="required">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Short summary" required minlength="3" maxlength="80" />
+            </div>
+
+            <div class="form-group" id="g-contactMessage">
+              <label for="contactMessage" class="required">Message</label>
+              <textarea id="contactMessage" name="contactMessage" rows="5" required minlength="10" maxlength="1000" placeholder="How can we help?"></textarea>
+              <p class="char-count" id="contactMessage-count" aria-hidden="true">0 / 1000</p>
+            </div>
+
+            <div class="form-group" id="g-contactConsent">
+              <label class="consent-label"><input type="checkbox" id="contactConsent" name="contactConsent" required /> I agree that Ivyson &amp; Schoeman may reply to me using these details.</label>
+            </div>
+
+            <button type="submit" class="btn-primary">Prepare Email</button>
           </form>
+
+          <div id="contact-result" tabindex="-1" aria-live="polite"></div>
         </div>
       </div>
     </section>
@@ -147,6 +190,9 @@
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.js" crossorigin="" defer></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/forms.js" defer></script>
+  <script src="js/map.js" defer></script>
 </body>
 </html>
