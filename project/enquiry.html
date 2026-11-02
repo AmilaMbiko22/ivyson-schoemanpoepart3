@@ -3,16 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Enquiry | Ivyson &amp; Schoeman Home Security</title>
-  <meta name="description" content="Submit an enquiry or request a free quote from Ivyson & Schoeman Home Security." />
+  <title>Free Home Security Quote &amp; Cost Estimate | Ivyson &amp; Schoeman</title>
+  <meta name="description" content="Get an instant estimate for cameras, sensors and smart locks based on your house size, and request a free on-site security evaluation and installation." />
+  <meta name="keywords" content="free security quote, home security cost estimate, security installation quote, on-site security evaluation, CCTV quote, smart lock price" />
+  <meta name="author" content="Ivyson &amp; Schoeman Home Security" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0b1f3a" />
+  <link rel="canonical" href="https://ivyson-schoeman-security.netlify.app/enquiry.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ivyson &amp; Schoeman Home Security" />
+  <meta property="og:title" content="Free Home Security Quote &amp; Cost Estimate | Ivyson &amp; Schoeman" />
+  <meta property="og:description" content="Get an instant estimate for cameras, sensors and smart locks based on your house size, and request a free on-site security evaluation and installation." />
+  <meta property="og:url" content="https://ivyson-schoeman-security.netlify.app/enquiry.html" />
+  <meta property="og:image" content="https://ivyson-schoeman-security.netlify.app/images/home-security-hero-738w.jpeg" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https://*.tile.openstreetmap.org https://cdnjs.cloudflare.com; connect-src 'self'; font-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/jpeg" href="images/favicon.jpeg" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <header>
     <div class="navbar">
-      <div class="logo"><a href="index.html"><img src="images/logo.jpeg" alt="Ivyson & Schoeman Home Security logo" /></a></div>
+      <div class="logo"><a href="index.html"><img src="images/ivyson-schoeman-logo.jpeg" alt="Ivyson & Schoeman Home Security logo" /></a></div>
 
       <input type="checkbox" id="nav-toggle" class="nav-toggle" />
       <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu">
@@ -31,10 +46,10 @@
     </div>
   </header>
 
-  <main>
+  <main id="main">
     <section class="page-section">
       <div class="container">
-        <h2>Request a Quote or Ask a Question</h2>
+        <h1>Request a Quote or Ask a Question</h1>
         <p class="section-intro">
           Fill in the form below and our team will get back to you
           with a free, no-obligation quote for your home security
@@ -42,55 +57,73 @@
         </p>
 
         <!--
-          Enquiry form.
-          Note: this form does not currently submit to a live backend.
-          The action/method below are placeholders for when the form
-          is connected to a server-side script or form handling service.
+          Enquiry form. js/forms.js validates the input and then loads
+          data/products.json (AJAX) to calculate an estimated cost without
+          reloading the page. If JavaScript is unavailable the form falls
+          back to the mailto action below.
         -->
         <div class="form-wrapper">
-          <form action="#" method="post">
+          <form id="enquiry-form" action="mailto:info@ivysonschoeman.co.za" method="post" enctype="text/plain" autocomplete="on">
 
-            <div class="form-group">
-              <label for="fullName">Full Name</label>
-              <input type="text" id="fullName" name="fullName" placeholder="e.g. Thandeka Nkosi" required />
+            <div class="form-group" id="g-fullName">
+              <label for="fullName" class="required">Full Name</label>
+              <input type="text" id="fullName" name="fullName" placeholder="e.g. Thandeka Nkosi" required minlength="2" maxlength="60" autocomplete="name" />
             </div>
 
-            <div class="form-group">
-              <label for="email">Email Address</label>
-              <input type="email" id="email" name="email" placeholder="you@example.com" required />
+            <div class="form-group" id="g-email">
+              <label for="email" class="required">Email Address</label>
+              <input type="email" id="email" name="email" placeholder="you@example.com" required maxlength="100" autocomplete="email" />
             </div>
 
-            <div class="form-group">
-              <label for="phone">Phone Number</label>
-              <input type="tel" id="phone" name="phone" placeholder="e.g. 082 123 4567" required />
+            <div class="form-group" id="g-phone">
+              <label for="phone" class="required">Phone Number</label>
+              <input type="tel" id="phone" name="phone" placeholder="e.g. 082 123 4567" required maxlength="20" autocomplete="tel" inputmode="tel" />
+              <p class="hint">South African number, e.g. 082 123 4567 or +27 82 123 4567.</p>
             </div>
 
-            <div class="form-group">
-              <label for="houseSize">Approximate House Size</label>
-              <select id="houseSize" name="houseSize">
+            <div class="form-group" id="g-houseSize">
+              <label for="houseSize" class="required">Approximate House Size</label>
+              <select id="houseSize" name="houseSize" required>
+                <option value="">Select a house size&hellip;</option>
                 <option value="small">Small (1&ndash;2 bedrooms)</option>
                 <option value="medium">Medium (3&ndash;4 bedrooms)</option>
                 <option value="large">Large (5+ bedrooms)</option>
               </select>
             </div>
 
-            <div class="form-group">
-              <label>Product / Service of Interest</label>
-              <div class="radio-group">
-                <label><input type="radio" name="interest" value="cameras" checked /> Cameras</label>
-                <label><input type="radio" name="interest" value="sensors" /> Sensors</label>
-                <label><input type="radio" name="interest" value="smart-locks" /> Smart Locks</label>
-                <label><input type="radio" name="interest" value="full-setup" /> Full Setup Quote</label>
+            <fieldset class="form-group" id="g-interest">
+              <legend class="required">Products of Interest</legend>
+              <div class="check-group">
+                <label><input type="checkbox" name="interest" value="cameras" /> Security cameras</label>
+                <label><input type="checkbox" name="interest" value="sensors" /> Door, window &amp; motion sensors</label>
+                <label><input type="checkbox" name="interest" value="smart-locks" /> Smart locks</label>
               </div>
+            </fieldset>
+
+            <div class="form-group" id="g-installation">
+              <label class="consent-label"><input type="checkbox" id="installation" name="installation" checked /> I would like professional installation included in my estimate</label>
             </div>
 
-            <div class="form-group">
-              <label for="message">Tell Us About Your Security Needs</label>
-              <textarea id="message" name="message" rows="5" placeholder="Describe your property and what you're looking for..."></textarea>
+            <div class="form-group" id="g-evalDate">
+              <label for="evalDate">Preferred On-Site Evaluation Date <span class="hint">(optional)</span></label>
+              <input type="date" id="evalDate" name="evalDate" />
+              <p class="hint">Evaluations take place Monday to Friday.</p>
             </div>
 
-            <button type="submit" class="btn-primary" style="border:none; cursor:pointer;">Submit Enquiry</button>
+            <div class="form-group" id="g-message">
+              <label for="message" class="required">Tell Us About Your Security Needs</label>
+              <textarea id="message" name="message" rows="5" required minlength="10" maxlength="500" placeholder="Describe your property and what you're looking for..."></textarea>
+              <p class="char-count" id="message-count" aria-hidden="true">0 / 500</p>
+            </div>
+
+            <div class="form-group" id="g-consent">
+              <label class="consent-label"><input type="checkbox" id="consent" name="consent" required /> I agree that Ivyson &amp; Schoeman may contact me about this enquiry.</label>
+            </div>
+
+            <button type="submit" class="btn-primary">Get My Estimate</button>
           </form>
+
+          <div id="enquiry-result" tabindex="-1" aria-live="polite"></div>
         </div>
       </div>
     </section>
@@ -125,6 +158,7 @@
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/forms.js" defer></script>
 </body>
 </html>
