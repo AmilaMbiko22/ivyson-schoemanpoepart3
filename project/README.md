@@ -171,7 +171,7 @@ HTML5, CSS3 (custom properties, Flexbox, Grid, media queries), JavaScript (ES5-s
 3. The site is deployed at https://ivyson-schoeman-security.netlify.app. If the address ever changes, update it in `robots.txt`, `sitemap.xml`, the `canonical`/`og:url` tags in each page and the JSON-LD block in `index.html`.
 
 ## Notes
-- The forms have no server: the estimate is calculated in the browser from `data/products.json`, and emails are sent through the visitor's own email app. Change `CONTACT_EMAIL` in `js/forms.js` to change the recipient.
+- The forms have no server: the estimate is calculated in the browser from `data/products.json`, and emails are sent through the visitor's own email app. Messages from both forms go to the address set as `CONTACT_EMAIL` in `js/forms.js` (currently sillyslider223@gmail.com); change it there to change the recipient.
 - Prices in `data/products.json` are indicative figures for the assignment and are not a real price list.
 - Estimated project costs (from the brief): quote tool/CMS/custom design R15 000–R35 000, hosting R1 200–R3 500/year, maintenance R4 000–R8 000/year, totalling R20 000–R46 500 for the first year.
 - Image credits: product photos show QVI, Sonoff and Hikvision products; the home and installation-planning photos are illustrative stock images. All are used for educational purposes only in this assessment.

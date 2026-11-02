@@ -15,7 +15,7 @@
   "use strict";
 
   /* ---- Settings you can change ---- */
-  var CONTACT_EMAIL = "info@ivysonschoeman.co.za"; // recipient of compiled emails
+  var CONTACT_EMAIL = "sillyslider223@gmail.com"; // recipient of compiled emails
   var FORM_ENDPOINT = ""; // optional: e.g. a Formspree URL. Leave empty to use email only.
 
   /* ---------- Validation helpers ---------- */
