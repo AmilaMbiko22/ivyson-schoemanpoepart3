@@ -1,0 +1,6 @@
+# robots.txt for Ivyson & Schoeman Home Security
+User-agent: *
+Allow: /
+Disallow: /data/
+
+Sitemap: https://ivyson-schoeman-security.netlify.app/sitemap.xml
