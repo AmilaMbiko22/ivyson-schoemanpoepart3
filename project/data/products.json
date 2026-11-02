@@ -1,0 +1,53 @@
+{
+  "currency": "ZAR",
+  "note": "Indicative prices including VAT. Final prices are confirmed after an on-site evaluation.",
+  "estimator": {
+    "installation": { "callOut": 350, "perDevice": 150 },
+    "houseSizes": {
+      "small":  { "label": "Small (1-2 bedrooms)",  "cameras": 2, "sensors": 4,  "smart-locks": 1 },
+      "medium": { "label": "Medium (3-4 bedrooms)", "cameras": 4, "sensors": 8,  "smart-locks": 2 },
+      "large":  { "label": "Large (5+ bedrooms)",   "cameras": 6, "sensors": 12, "smart-locks": 3 }
+    },
+    "categoryLabels": { "cameras": "Security cameras", "sensors": "Sensors", "smart-locks": "Smart locks" }
+  },
+  "products": [
+    { "id": "cam-indoor", "name": "Indoor 1080p Wi-Fi Camera", "category": "cameras", "price": 899,
+      "image": "images/wireless-security-camera.jpeg", "alt": "Wireless indoor security camera with 1080p resolution",
+      "summary": "Compact indoor camera with two-way audio, ideal for living rooms and passages.",
+      "specs": ["1080p full HD video", "Night vision up to 10 m", "Two-way audio", "Mobile app live view"] },
+    { "id": "cam-outdoor", "name": "Outdoor Night-Vision Camera", "category": "cameras", "price": 1499,
+      "image": "images/wireless-security-camera.jpeg", "alt": "Weatherproof outdoor security camera with night vision",
+      "summary": "Weatherproof camera for driveways, gates and the perimeter wall.",
+      "specs": ["1080p with colour night vision", "Weatherproof (IP65)", "Motion detection alerts", "Mobile app live view"] },
+    { "id": "cam-4k", "name": "4K Outdoor Camera with Motion Alerts", "category": "cameras", "price": 2299,
+      "image": "images/wireless-security-camera.jpeg", "alt": "4K outdoor home security camera",
+      "summary": "Our sharpest picture for larger properties where you need to read a number plate.",
+      "specs": ["4K resolution", "Smart person and vehicle alerts", "Night vision up to 30 m", "Local and cloud storage"] },
+
+    { "id": "sen-door", "name": "Door & Window Contact Sensor", "category": "sensors", "price": 249,
+      "image": "images/door-window-sensor.png", "alt": "Wireless door and window contact sensor",
+      "summary": "Small wireless sensor that alerts you the moment a door or window opens.",
+      "specs": ["Instant mobile alerts", "Easy peel-and-stick fitting", "Long-life battery", "Works with our hub"] },
+    { "id": "sen-motion", "name": "PIR Motion Sensor", "category": "sensors", "price": 349,
+      "image": "images/door-window-sensor.png", "alt": "Wireless PIR motion sensor for indoor use",
+      "summary": "Detects movement in hallways and rooms, with pet-friendly settings.",
+      "specs": ["Wide detection angle", "Pet-friendly mode", "Instant mobile alerts", "Works with our hub"] },
+    { "id": "sen-glass", "name": "Glass-Break Sensor", "category": "sensors", "price": 449,
+      "image": "images/door-window-sensor.png", "alt": "Wireless glass-break sensor",
+      "summary": "Listens for the sound of breaking glass so a smashed window cannot go unnoticed.",
+      "specs": ["Acoustic glass-break detection", "Covers a whole room", "Instant mobile alerts", "Works with our hub"] },
+
+    { "id": "lock-keypad", "name": "Keypad Smart Door Lock", "category": "smart-locks", "price": 3299,
+      "image": "images/keypad-smart-door-lock.jpeg", "alt": "Keypad smart door lock with PIN entry",
+      "summary": "Keyless entry with PIN codes you can create and cancel from your phone.",
+      "specs": ["PIN code and app entry", "Remote lock and unlock", "Access log for family members", "Auto-lock timer"] },
+    { "id": "lock-finger", "name": "Fingerprint Smart Lock", "category": "smart-locks", "price": 4199,
+      "image": "images/keypad-smart-door-lock.jpeg", "alt": "Fingerprint smart door lock",
+      "summary": "Open your door with a touch, with PIN and app backup.",
+      "specs": ["Fingerprint, PIN and app entry", "Remote lock and unlock", "Access log", "Emergency key override"] },
+    { "id": "lock-retro", "name": "Retrofit App-Controlled Deadbolt", "category": "smart-locks", "price": 2499,
+      "image": "images/keypad-smart-door-lock.jpeg", "alt": "Retrofit smart deadbolt for existing doors",
+      "summary": "Upgrade your existing lock without replacing the whole door hardware.",
+      "specs": ["Fits most standard doors", "App control and guest codes", "Access log", "Keeps your existing keys"] }
+  ]
+}

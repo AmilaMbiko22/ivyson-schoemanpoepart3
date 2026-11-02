@@ -3,16 +3,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Products &amp; Services | Ivyson &amp; Schoeman Home Security</title>
-  <meta name="description" content="Explore our product catalog of cameras, sensors and smart locks, plus our installation and evaluation services." />
+  <title>Security Cameras, Sensors &amp; Smart Locks | Ivyson &amp; Schoeman</title>
+  <meta name="description" content="Browse and search our catalog of home security cameras, door and window sensors and smart locks, with indicative prices, installation services and a photo gallery." />
+  <meta name="keywords" content="security cameras, wireless CCTV, door window sensors, motion sensors, smart door locks, keypad lock, home security installation, security prices South Africa" />
+  <meta name="author" content="Ivyson &amp; Schoeman Home Security" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#0b1f3a" />
+  <link rel="canonical" href="https://ivyson-schoeman-security.netlify.app/services.html" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Ivyson &amp; Schoeman Home Security" />
+  <meta property="og:title" content="Security Cameras, Sensors &amp; Smart Locks | Ivyson &amp; Schoeman" />
+  <meta property="og:description" content="Browse and search our catalog of home security cameras, door and window sensors and smart locks, with indicative prices, installation services and a photo gallery." />
+  <meta property="og:url" content="https://ivyson-schoeman-security.netlify.app/services.html" />
+  <meta property="og:image" content="https://ivyson-schoeman-security.netlify.app/images/home-security-hero-738w.jpeg" />
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdnjs.cloudflare.com; style-src 'self' https://cdnjs.cloudflare.com; img-src 'self' data: https://*.tile.openstreetmap.org https://cdnjs.cloudflare.com; connect-src 'self'; font-src 'self'; frame-src 'none'; object-src 'none'; base-uri 'self'; form-action 'self' mailto:" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="stylesheet" href="css/style.css" />
   <link rel="icon" type="image/jpeg" href="images/favicon.jpeg" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
 
   <header>
     <div class="navbar">
-      <div class="logo"><a href="index.html"><img src="images/logo.jpeg" alt="Ivyson & Schoeman Home Security logo" /></a></div>
+      <div class="logo"><a href="index.html"><img src="images/ivyson-schoeman-logo.jpeg" alt="Ivyson & Schoeman Home Security logo" /></a></div>
 
       <input type="checkbox" id="nav-toggle" class="nav-toggle" />
       <label for="nav-toggle" class="nav-toggle-label" aria-label="Toggle navigation menu">
@@ -31,53 +46,84 @@
     </div>
   </header>
 
-  <main>
-    <!-- ===== Product catalog ===== -->
-    <section class="page-section">
+  <main id="main">
+    <!-- ===== Product catalog (rendered by js/catalog.js from data/products.json) ===== -->
+    <section class="page-section" id="catalog">
       <div class="container">
-        <h2>Our Product Catalog</h2>
+        <h1>Our Product Catalog</h1>
         <p class="section-intro">
           Detailed listings for the equipment we supply and install,
-          with specifications and indicative pricing.
+          with specifications and indicative pricing. Search, filter
+          and sort to find the right fit for your home.
         </p>
 
-        <div class="card-grid">
-          <div class="card">
-            <img src="images/camera-product.jpeg" alt="QVI wireless security camera" class="product-image" />
-            <h3>Security Cameras</h3>
-            <p>HD and night-vision cameras for indoor and outdoor coverage.</p>
-            <ul>
-              <li>1080p / 4K resolution options</li>
-              <li>Night vision &amp; motion detection</li>
-              <li>Mobile app viewing</li>
-            </ul>
+        <form class="catalog-controls" id="catalog-controls" role="search" aria-label="Search the product catalog" novalidate>
+          <div class="control">
+            <label for="product-search">Search products</label>
+            <input type="search" id="product-search" name="q" placeholder="e.g. night vision, keypad, motion" autocomplete="off" maxlength="60" />
           </div>
-          <div class="card">
-            <img src="images/sensor-product.png" alt="Sonoff wireless door/window sensor" class="product-image" />
-            <h3>Sensors</h3>
-            <p>Door, window and motion sensors that alert you to unexpected activity.</p>
-            <ul>
-              <li>Door &amp; window contact sensors</li>
-              <li>Motion &amp; glass-break sensors</li>
-              <li>Instant mobile alerts</li>
-            </ul>
+          <div class="control">
+            <label for="product-sort">Sort by</label>
+            <select id="product-sort" name="sort">
+              <option value="featured">Featured</option>
+              <option value="price-asc">Price: low to high</option>
+              <option value="price-desc">Price: high to low</option>
+              <option value="name-asc">Name: A to Z</option>
+            </select>
           </div>
-          <div class="card">
-            <img src="images/smartlock-product.jpeg" alt="Hikvision smart door lock with keypad" class="product-image" />
-            <h3>Smart Locks</h3>
-            <p>Keyless entry systems for added convenience and control.</p>
-            <ul>
-              <li>PIN code &amp; app-based entry</li>
-              <li>Remote lock/unlock</li>
-              <li>Access logs for family members</li>
-            </ul>
-          </div>
+        </form>
+
+        <div class="tabs" id="category-tabs" role="tablist" aria-label="Product categories">
+          <button type="button" role="tab" class="tab" id="tab-all" data-category="all" aria-selected="true" aria-controls="product-grid">All</button>
+          <button type="button" role="tab" class="tab" id="tab-cameras" data-category="cameras" aria-selected="false" aria-controls="product-grid" tabindex="-1">Cameras</button>
+          <button type="button" role="tab" class="tab" id="tab-sensors" data-category="sensors" aria-selected="false" aria-controls="product-grid" tabindex="-1">Sensors</button>
+          <button type="button" role="tab" class="tab" id="tab-smart-locks" data-category="smart-locks" aria-selected="false" aria-controls="product-grid" tabindex="-1">Smart Locks</button>
         </div>
+
+        <p class="result-count" id="result-count" role="status" aria-live="polite"></p>
+
+        <div class="card-grid" id="product-grid" role="tabpanel" aria-labelledby="tab-all">
+          <p class="status-msg">Loading products&hellip;</p>
+        </div>
+
+        <noscript>
+          <div class="card-grid">
+            <div class="card">
+              <img src="images/wireless-security-camera.jpeg" alt="Wireless security camera for home use" class="product-image" width="275" height="183" />
+              <h3>Security Cameras</h3>
+              <p>HD and night-vision cameras for indoor and outdoor coverage.</p>
+            </div>
+            <div class="card">
+              <img src="images/door-window-sensor.png" alt="Wireless door and window sensor" class="product-image" width="225" height="225" />
+              <h3>Sensors</h3>
+              <p>Door, window and motion sensors that alert you to unexpected activity.</p>
+            </div>
+            <div class="card">
+              <img src="images/keypad-smart-door-lock.jpeg" alt="Keypad smart door lock" class="product-image" width="447" height="447" />
+              <h3>Smart Locks</h3>
+              <p>Keyless entry systems for added convenience and control.</p>
+            </div>
+          </div>
+        </noscript>
       </div>
     </section>
 
+    <!-- Product detail modal (native dialog element, filled by js/catalog.js) -->
+    <dialog id="product-modal" class="modal" aria-labelledby="modal-title">
+      <div class="modal-inner">
+        <button type="button" class="modal-close" data-close aria-label="Close product details">&times;</button>
+        <img id="modal-image" src="images/wireless-security-camera.jpeg" alt="Selected product" class="modal-image" width="275" height="183" />
+        <p class="modal-category" id="modal-category"></p>
+        <h2 id="modal-title"></h2>
+        <p id="modal-summary"></p>
+        <ul id="modal-specs" class="spec-list"></ul>
+        <p class="modal-price" id="modal-price"></p>
+        <a id="modal-quote" href="enquiry.html" class="btn-primary">Get a quote for this</a>
+      </div>
+    </dialog>
+
     <!-- ===== Services ===== -->
-    <section class="page-section" style="background-color:#eef1f4;">
+    <section class="page-section section-alt">
       <div class="container">
         <h2>Our Services</h2>
         <p class="section-intro">
@@ -150,7 +196,57 @@
       </div>
     </section>
 
-    <section class="page-section" style="text-align:center;">
+    <!-- ===== Gallery with lightbox (js/lightbox.js) ===== -->
+    <section class="page-section section-alt" id="gallery">
+      <div class="container">
+        <h2>Photo Gallery</h2>
+        <p class="section-intro">Click any photo to view it larger. Use the arrow keys to move between photos.</p>
+        <ul class="gallery" id="gallery-grid">
+          <li><a href="images/home-security-hero-738w.jpeg" data-caption="A family home protected by outdoor security cameras at dusk"><img src="images/home-security-hero-400w.jpeg" alt="Family home at dusk with an outdoor security camera in the foreground" width="400" height="200" loading="lazy" /></a></li>
+          <li><a href="images/wireless-security-camera.jpeg" data-caption="Wireless security camera for indoor and outdoor coverage"><img src="images/wireless-security-camera.jpeg" alt="Wireless security camera" width="275" height="183" loading="lazy" /></a></li>
+          <li><a href="images/door-window-sensor.png" data-caption="Wireless door and window sensor that sends instant mobile alerts"><img src="images/door-window-sensor.png" alt="Wireless door and window sensor" width="225" height="225" loading="lazy" /></a></li>
+          <li><a href="images/keypad-smart-door-lock.jpeg" data-caption="Keypad smart door lock with PIN and app entry"><img src="images/keypad-smart-door-lock.jpeg" alt="Keypad smart door lock" width="447" height="447" loading="lazy" /></a></li>
+        </ul>
+      </div>
+    </section>
+
+    <dialog id="lightbox" class="lightbox" aria-label="Image viewer">
+      <button type="button" class="lb-btn lb-close" data-lb="close" aria-label="Close image viewer">&times;</button>
+      <button type="button" class="lb-btn lb-prev" data-lb="prev" aria-label="Previous image">&#10094;</button>
+      <figure>
+        <img id="lb-image" src="images/wireless-security-camera.jpeg" alt="Gallery image" />
+        <figcaption id="lb-caption"></figcaption>
+      </figure>
+      <button type="button" class="lb-btn lb-next" data-lb="next" aria-label="Next image">&#10095;</button>
+    </dialog>
+
+    <!-- ===== FAQ accordion (js/script.js) ===== -->
+    <section class="page-section" id="faq">
+      <div class="container">
+        <h2>Frequently Asked Questions</h2>
+        <p class="section-intro">Quick answers to the questions homeowners ask us most.</p>
+        <div class="accordion" data-accordion>
+          <h3><button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-1" id="faq-1-btn">How much does a home security setup cost?</button></h3>
+          <div class="accordion-panel" id="faq-1" role="region" aria-labelledby="faq-1-btn" hidden>
+            <p>It depends on the size of your home and the equipment you choose. Use the <a href="enquiry.html">free quote form</a> for an instant estimate, then book an on-site evaluation for a final price.</p>
+          </div>
+          <h3><button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-2" id="faq-2-btn">Can I install the equipment myself?</button></h3>
+          <div class="accordion-panel" id="faq-2" role="region" aria-labelledby="faq-2-btn" hidden>
+            <p>Many sensors are simple peel-and-stick devices, but cameras and smart locks work best when professionally fitted so they cover the right areas and are secured against tampering.</p>
+          </div>
+          <h3><button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-3" id="faq-3-btn">Will my cameras work during load shedding?</button></h3>
+          <div class="accordion-panel" id="faq-3" role="region" aria-labelledby="faq-3-btn" hidden>
+            <p>We recommend pairing cameras and your router with a small battery backup so your system keeps recording during power cuts. Ask us about backup options when you request a quote.</p>
+          </div>
+          <h3><button type="button" class="accordion-trigger" aria-expanded="false" aria-controls="faq-4" id="faq-4-btn">What areas do you serve?</button></h3>
+          <div class="accordion-panel" id="faq-4" role="region" aria-labelledby="faq-4-btn" hidden>
+            <p>We have branches in Bellville (Cape Town) and Randburg (Johannesburg). See the <a href="contact.html">contact page</a> for the map and opening hours.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page-section text-center">
       <a href="enquiry.html" class="btn-primary">Request a Free Quote</a>
     </section>
   </main>
@@ -184,6 +280,8 @@
     </div>
   </footer>
 
-  <script src="js/script.js"></script>
+  <script src="js/script.js" defer></script>
+  <script src="js/catalog.js" defer></script>
+  <script src="js/lightbox.js" defer></script>
 </body>
 </html>
